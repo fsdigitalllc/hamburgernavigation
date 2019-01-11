@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Colfax-Bold';
+    src: url('ColfaxWebBold.woff2');
+}
+
+@font-face {
+    font-family: 'Colfax-Regular';
+    src: url('ColfaxWebRegular.woff2');
+}
+
+@font-face {
+    font-family: 'Colfax-Medium';
+    src: url('colfaxwebmedium.woff2');
+}
