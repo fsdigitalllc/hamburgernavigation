@@ -21,14 +21,6 @@ h1,h2,h3,h4,h5,h6 {
 .bold, strong {
 	font-family: 'Colfax-Bold';
 }
-.py-0 {
-	padding-top:0 !important;
-	padding-bottom:0 !important;
-}
-.my-0 {
-	margin-top:0 !important;
-	margin-bottom:0 !important;
-}
 .menu_icon_wrapper {
 	height: 85px;
 	width: 100px;
@@ -374,16 +366,9 @@ header.menu_active .main_menu li a:not(.search_btn) {
 	opacity: 0 !important;
 	z-index: -1 !important;
 	pointer-events: none !important;
-	padding-bottom: 38px;
 	-webkit-transform: translateX(-50px);
 	    -ms-transform: translateX(-50px);
 	        transform: translateX(-50px);
-}
-.lvl2menu>li>.dropdown_wrapper .row div[class^="col-"] .inner_menu_wrap:last-child {
-	margin-bottom: 0;
-}
-.inner_menu_wrap>*:last-child {
-	margin-bottom: 0 !important;
 }
 /*.lvl2menu>li:hover>.dropdown_wrapper*/.mega_menu_wrapper ul li>.dropdown_wrapper.active { 
 	opacity: 1 !important;
