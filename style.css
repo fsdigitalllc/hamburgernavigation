@@ -312,6 +312,9 @@ header.menu_active .main_menu li a:not(.search_btn) {
 	opacity: 1;
 	width: 100%;
 }
+.dropdown_wrapper {
+	min-height: 720px;
+}
 .mega_menu_wrapper ul[class*=' lvl'] {
 	padding: 27px 0px 27px 16px;
 }
