@@ -135,6 +135,7 @@ header {
 	left: 0;
 	right: 0;
 	border-radius: 0 0 10px 10px;
+	margin-top: -1px;
 }
 header.menu_active .main_menu li a:not(.search_btn) {
 	opacity: 0;
