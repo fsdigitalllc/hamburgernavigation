@@ -302,6 +302,9 @@ header.menu_active .main_menu li a:not(.search_btn) {
   from {width: 250px;}
   to {width: 100%;}
 }
+.dropdown_wrapper {
+	min-height: 720px;
+}
 .mega_menu_wrapper>.dropdown_wrapper>ul {
 	opacity: 0;
 	-webkit-transition: all 0.1s ease-in-out;
