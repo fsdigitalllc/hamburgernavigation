@@ -8,7 +8,7 @@
 <link href="includes/css/fontawesome-all.min.css" rel="stylesheet">
 <link href="includes/css/bootstrap.min.css" rel="stylesheet">
 <link href="includes/fonts/fonts.css" rel="stylesheet">
-<link href="style.css" rel="stylesheet">
+<link href="style.css?v=2.1" rel="stylesheet">
 </head>
 
 <body>
@@ -1846,9 +1846,14 @@
     }), $(this).addClass("active"), $(this).children(".dropdown_wrapper").addClass("active"), $(this).children(".dropdown_wrapper").children("ul.lvl2menu").children("li").each(function(e, a) {
       if ($(this).children(".dropdown_wrapper").length > 0) return $(this).addClass("active"), $(this).children(".dropdown_wrapper").addClass("active"), !1
     }));
-
-    var e = $(".lvl1menu .dropdown_wrapper.active").innerHeight();
-    $(".lvl1menu .dropdown_wrapper.active").parents(".dropdown_wrapper").height(e);
+    if($(window).width() >= 992){
+      var e = $(".lvl2menu .dropdown_wrapper.active").innerHeight();
+      $(".lvl2menu .dropdown_wrapper.active").parents(".dropdown_wrapper").height(e);
+    }
+    else{
+      var e = $(".lvl1menu .dropdown_wrapper.active").innerHeight();
+      $(".lvl1menu .dropdown_wrapper.active").parents(".dropdown_wrapper").height(e);
+    }
   }),
   $(".mega_menu_wrapper .lvl2menu li").click(function() {
     var e = $(".lvl2menu .dropdown_wrapper.active").innerHeight();
