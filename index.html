@@ -1838,7 +1838,7 @@
     }), $(this).addClass("search_link_active"), $(".search_wrapper").slideDown())
   }),
   //merged mouseover and mouseleave function to click event in order to remove hover selection
-  $(".mega_menu_wrapper .lvl1menu li").click(function() {
+  $(".mega_menu_wrapper li").click(function() {
     $(this).hasClass("active") || $(this).hasClass("no_submenu") || $(window).width() >= 992 && ($(this).closest("ul").children("li").each(function(e, a) {
       $(this).removeClass("active"), $(this).children(".dropdown_wrapper").removeClass("active"), $(this).children(".dropdown_wrapper").children("ul.lvl2menu").children("li").each(function(e, a) {
         $(this).removeClass("active"), $(this).children(".dropdown_wrapper").removeClass("active")
@@ -1854,22 +1854,22 @@
     var e = $(".lvl2menu .dropdown_wrapper.active").innerHeight();
     $(".lvl1menu .dropdown_wrapper.active").parents(".dropdown_wrapper").height(e);
   }),
-  $(".mega_menu_wrapper .lvl2menu li").mouseenter(function() {
-    $(this).hasClass("active") || $(this).hasClass("no_submenu") || $(window).width() >= 992 && ($(this).closest("ul").children("li").each(function(e, a) {
-      $(this).removeClass("active"), $(this).children(".dropdown_wrapper").removeClass("active"), $(this).children(".dropdown_wrapper").children("ul.lvl2menu").children("li").each(function(e, a) {
-        $(this).removeClass("active"), $(this).children(".dropdown_wrapper").removeClass("active")
-      })
-    }), $(this).addClass("active"), $(this).children(".dropdown_wrapper").addClass("active"), $(this).children(".dropdown_wrapper").children("ul.lvl2menu").children("li").each(function(e, a) {
-      if ($(this).children(".dropdown_wrapper").length > 0) return $(this).addClass("active"), $(this).children(".dropdown_wrapper").addClass("active"), !1
-    }))
-  }),
-  $(".mega_menu_wrapper .lvl2menu li").mouseleave(function() {
-    $(window).width() <= 991 && ($(this).removeClass("active"), $(this).children(".dropdown_wrapper").removeClass("active"), $(this).children(".dropdown_wrapper").find("ul").each(function(e, a) {
-      $(this).children("li").each(function(e, a) {
-        $(this).removeClass("active"), $(this).children(".dropdown_wrapper").removeClass("active")
-      })
-    }))
-  }),
+  // $(".mega_menu_wrapper .lvl2menu li").mouseenter(function() {
+  //   $(this).hasClass("active") || $(this).hasClass("no_submenu") || $(window).width() >= 992 && ($(this).closest("ul").children("li").each(function(e, a) {
+  //     $(this).removeClass("active"), $(this).children(".dropdown_wrapper").removeClass("active"), $(this).children(".dropdown_wrapper").children("ul.lvl2menu").children("li").each(function(e, a) {
+  //       $(this).removeClass("active"), $(this).children(".dropdown_wrapper").removeClass("active")
+  //     })
+  //   }), $(this).addClass("active"), $(this).children(".dropdown_wrapper").addClass("active"), $(this).children(".dropdown_wrapper").children("ul.lvl2menu").children("li").each(function(e, a) {
+  //     if ($(this).children(".dropdown_wrapper").length > 0) return $(this).addClass("active"), $(this).children(".dropdown_wrapper").addClass("active"), !1
+  //   }))
+  // }),
+  // $(".mega_menu_wrapper .lvl2menu li").mouseleave(function() {
+  //   $(window).width() <= 991 && ($(this).removeClass("active"), $(this).children(".dropdown_wrapper").removeClass("active"), $(this).children(".dropdown_wrapper").find("ul").each(function(e, a) {
+  //     $(this).children("li").each(function(e, a) {
+  //       $(this).removeClass("active"), $(this).children(".dropdown_wrapper").removeClass("active")
+  //     })
+  //   }))
+  // }),
   $(".mega_menu_wrapper li.no_submenu a").click(function(e) {
     $(this).siblings(".dropdown_wrapper").length > 0 && e.preventDefault(), $(this).siblings(".dropdown_wrapper").addClass("active"); 
   }), $(".lvl2menu>li.no_submenu:nth-child(1)>a").click(function(e) {
