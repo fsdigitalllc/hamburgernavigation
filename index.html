@@ -8,7 +8,7 @@
 <link href="includes/css/fontawesome-all.min.css" rel="stylesheet">
 <link href="includes/css/bootstrap.min.css" rel="stylesheet">
 <link href="includes/fonts/fonts.css" rel="stylesheet">
-<link href="style.css?v=2.1" rel="stylesheet">
+<link href="style.css?v=3.01" rel="stylesheet">
 </head>
 
 <body>
@@ -1814,16 +1814,32 @@
     })) : ($(".search_btn").removeClass("search_link_active"), $(".search_wrapper").slideUp(), $(this).removeClass("animate"), setTimeout(function() {
       $(".btn_menu, .menu_icon_wrapper").addClass("active"), $("header").addClass("menu_active")
     }, 100), $(".mega_menu_wrapper").slideDown(300, function() {
-      $(".mega_menu_wrapper").addClass("mega_menu_active"), $(window).width() >= 992 && ($(".lvl1menu>li:first-child").addClass("active"), $(".lvl1menu>li:first-child>.dropdown_wrapper").addClass("active"), $(".lvl1menu>li>.dropdown_wrapper>ul>li").each(function(e, a) {
-        if ($(this).children(".dropdown_wrapper").length > 0) return $(this).addClass("active"), $(this).children(".dropdown_wrapper").addClass("active"), !1
-      }))
+      $(".mega_menu_wrapper").addClass("mega_menu_active");
+      //this is only used to set default in first use case of menu
+      if(!$(".lvl1menu>li").hasClass("active")) {
+        $(window).width() >= 992 && ($(".lvl1menu>li:first-child").addClass("active"), $(".lvl1menu>li:first-child>.dropdown_wrapper").addClass("active"), $(".lvl1menu>li>.dropdown_wrapper>ul>li").each(function(e, a) {
+          if ($(this).children(".dropdown_wrapper").length > 0) return $(this).addClass("active"), $(this).children(".dropdown_wrapper").addClass("active"), !1
+        }))
+      }
+      //for mobile screen
+      else {
+        $(".lvl1menu>li>.dropdown_wrapper>ul>li").each(function(e, a) {
+          if ($(this).children(".dropdown_wrapper").length > 0) return $(this).addClass("active"), $(this).children(".dropdown_wrapper").addClass("active"), !1
+        })
+      }
+      setTimeout(function() {
+        if($(window).width() >= 992){
+          var e = $(".lvl2menu .dropdown_wrapper.active").innerHeight();
+          $(".lvl2menu .dropdown_wrapper.active").parents(".dropdown_wrapper").height(e);
+        }
+      }, 300);
     }))
   }), $(document).ready(function(e) {
     set_height()
   }), $(window).load(function() {
     set_height(), $(".mega_menu_wrapper").addClass("mega_menu_set"), $("header").addClass("header_set")
   }), $(window).resize(function() {
-    set_height()
+    // set_height()
   }), $(".search_btn").click(function(e) {
     e.preventDefault(), $(this).hasClass("search_link_active") ? ($(this).removeClass("search_link_active"), $(".search_wrapper").slideUp()) : ($(".btn_menu").removeClass("active"), $(".menu_icon_wrapper").removeClass("active"), $("header").removeClass("menu_active"), setTimeout(function() {
       $(".btn_menu").addClass("animate")
@@ -1886,6 +1902,7 @@
     // e.preventDefault()
   }),
   $(".back-btn").click(function(e) {
+    debugger;
     e.preventDefault(), $(this).closest(".dropdown_wrapper").removeClass("active");
     $(".dropdown_wrapper").css({
       height: "fit-content"
