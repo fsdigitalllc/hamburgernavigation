@@ -8,7 +8,7 @@
 <link href="includes/css/fontawesome-all.min.css" rel="stylesheet">
 <link href="includes/css/bootstrap.min.css" rel="stylesheet">
 <link href="includes/fonts/fonts.css" rel="stylesheet">
-<link href="style.css?v=3.01" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -1838,8 +1838,6 @@
     set_height()
   }), $(window).load(function() {
     set_height(), $(".mega_menu_wrapper").addClass("mega_menu_set"), $("header").addClass("header_set")
-  }), $(window).resize(function() {
-    // set_height()
   }), $(".search_btn").click(function(e) {
     e.preventDefault(), $(this).hasClass("search_link_active") ? ($(this).removeClass("search_link_active"), $(".search_wrapper").slideUp()) : ($(".btn_menu").removeClass("active"), $(".menu_icon_wrapper").removeClass("active"), $("header").removeClass("menu_active"), setTimeout(function() {
       $(".btn_menu").addClass("animate")
@@ -1864,16 +1862,18 @@
     }));
     if($(window).width() >= 992){
       var e = $(".lvl2menu .dropdown_wrapper.active").innerHeight();
-      $(".lvl2menu .dropdown_wrapper.active").parents(".dropdown_wrapper").height(e);
+      $(".lvl2menu .dropdown_wrapper.active").parents(".dropdown_wrapper").css("height", e+"px");
     }
     else{
       var e = $(".lvl1menu .dropdown_wrapper.active").innerHeight();
-      $(".lvl1menu .dropdown_wrapper.active").parents(".dropdown_wrapper").height(e);
+      $(".lvl1menu .dropdown_wrapper.active").parents(".dropdown_wrapper").css("height", e+"px");
     }
+
   }),
   $(".mega_menu_wrapper .lvl2menu li").click(function() {
     var e = $(".lvl2menu .dropdown_wrapper.active").innerHeight();
-    $(".lvl1menu .dropdown_wrapper.active").parents(".dropdown_wrapper").height(e);
+    $(".lvl2menu").parents(".dropdown_wrapper.active").css("height", e+"px");
+    $(".lvl1menu").parents(".dropdown_wrapper.active").css("height", e+"px");
   }),
   // $(".mega_menu_wrapper .lvl2menu li").mouseenter(function() {
   //   $(this).hasClass("active") || $(this).hasClass("no_submenu") || $(window).width() >= 992 && ($(this).closest("ul").children("li").each(function(e, a) {
@@ -1902,7 +1902,6 @@
     // e.preventDefault()
   }),
   $(".back-btn").click(function(e) {
-    debugger;
     e.preventDefault(), $(this).closest(".dropdown_wrapper").removeClass("active");
     $(".dropdown_wrapper").css({
       height: "fit-content"
