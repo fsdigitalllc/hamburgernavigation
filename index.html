@@ -1822,7 +1822,7 @@
         }))
       }
       //for mobile screen
-      else {
+      else if($(window).width() <= 991) {
         $(".lvl1menu>li>.dropdown_wrapper>ul>li").each(function(e, a) {
           if ($(this).children(".dropdown_wrapper").length > 0) return $(this).addClass("active"), $(this).children(".dropdown_wrapper").addClass("active"), !1
         })
@@ -1830,7 +1830,8 @@
       setTimeout(function() {
         if($(window).width() >= 992){
           var e = $(".lvl2menu .dropdown_wrapper.active").innerHeight();
-          $(".lvl2menu .dropdown_wrapper.active").parents(".dropdown_wrapper").height(e);
+          if(e < 720) e = 720;
+          $(".lvl2menu .dropdown_wrapper.active").parents(".dropdown_wrapper").css("height", e+"px");
         }
       }, 300);
     }))
@@ -1838,6 +1839,10 @@
     set_height()
   }), $(window).load(function() {
     set_height(), $(".mega_menu_wrapper").addClass("mega_menu_set"), $("header").addClass("header_set")
+  }), $(window).resize(function() {
+    var e = $(".lvl2menu .dropdown_wrapper.active").innerHeight();
+    if(e < 720) e = 720;
+    $(".lvl2menu .dropdown_wrapper.active").css("height", e+"px");
   }), $(".search_btn").click(function(e) {
     e.preventDefault(), $(this).hasClass("search_link_active") ? ($(this).removeClass("search_link_active"), $(".search_wrapper").slideUp()) : ($(".btn_menu").removeClass("active"), $(".menu_icon_wrapper").removeClass("active"), $("header").removeClass("menu_active"), setTimeout(function() {
       $(".btn_menu").addClass("animate")
@@ -1862,6 +1867,7 @@
     }));
     if($(window).width() >= 992){
       var e = $(".lvl2menu .dropdown_wrapper.active").innerHeight();
+      if(e < 720) e = 720;
       $(".lvl2menu .dropdown_wrapper.active").parents(".dropdown_wrapper").css("height", e+"px");
     }
     else{
@@ -1872,6 +1878,7 @@
   }),
   $(".mega_menu_wrapper .lvl2menu li").click(function() {
     var e = $(".lvl2menu .dropdown_wrapper.active").innerHeight();
+    // if(e < 720) e = 720;
     $(".lvl2menu").parents(".dropdown_wrapper.active").css("height", e+"px");
     $(".lvl1menu").parents(".dropdown_wrapper.active").css("height", e+"px");
   }),
@@ -1904,7 +1911,7 @@
   $(".back-btn").click(function(e) {
     e.preventDefault(), $(this).closest(".dropdown_wrapper").removeClass("active");
     $(".dropdown_wrapper").css({
-      height: "fit-content"
+      height: "unset"
     });
   }), $('.mega_menu_wrapper ul[class*=" lvl"]>li>a').each(function(e, a) {
     0 == $(this).siblings(".dropdown_wrapper").length && $(this).parent("li").addClass("no_submenu")
