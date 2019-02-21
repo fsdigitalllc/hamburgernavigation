@@ -376,7 +376,7 @@ header .mega_menu_wrapper ul[class*=" lvl"] > li > a {
 
 /* added a new style to prevent active menu cursor be point */
 header .mega_menu_wrapper ul[class*=" lvl"] > li.active > a {
-  cursor: auto;
+  cursor: default;
 }
 
 header .lvl1menu > li.active > a, header .lvl1menu > li:not(.no_submenu):hover > a {
