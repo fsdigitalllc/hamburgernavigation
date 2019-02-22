@@ -169,7 +169,7 @@ header.header_set .header_bottom:before {
 	width:100%;
 	background:#0075ba;
 }
-.menu_active .header_bottom {
+header .menu_active .header_bottom {
   -webkit-box-shadow: 0px 3px 4.65px 0.35px rgba(0, 0, 0, 0.14);
   box-shadow: 0px 3px 4.65px 0.35px rgba(0, 0, 0, 0.14);
   /*max-width: 1600px;
@@ -376,7 +376,7 @@ header .mega_menu_wrapper ul[class*=" lvl"] > li > a {
 
 /* added a new style to prevent active menu cursor be point */
 header .mega_menu_wrapper ul[class*=" lvl"] > li.active > a {
-  cursor: auto;
+  cursor: default;
 }
 
 header .lvl1menu > li.active > a, header .lvl1menu > li:not(.no_submenu):hover > a {
