@@ -459,6 +459,7 @@ header .inner_menu_wrap h4 {
   padding: 0 15px;
   margin-bottom: 15px;
   text-transform: none;
+  font-weight: bold;
 }
 header .inner_menu_wrap ul li a {
   font-size: 18px;
@@ -491,6 +492,10 @@ header .inner_menu_wrap ul:not(.w_tags):not(.menu_posts_list) li a:hover, header
 header .arrow-wrap, header .tag-wrap {
   display: inline-block;
 }
+header .inner_menu_wrap li, header .inner_menu_wrap p {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-weight: 400;
+}
 header .inner_menu_wrap ul.w_tags li a {
   -webkit-box-align: center !important;
   -ms-flex-align: center !important;
@@ -511,7 +516,7 @@ header .inner_menu_wrap ul.w_tags li a span {
 }
 header .list-tag {
   font-size: 12px;
-  padding: 4px 7px 2px;
+  padding: 3px 7px 2px;
   display: inline-block;
   background: #b1b9bf;
   border-radius: 3px;
@@ -521,6 +526,7 @@ header .list-tag {
   text-transform: uppercase;
   margin-left: 10px;
   margin-bottom: 2px;
+  line-height: 1.7;
 }
 header .inner_menu_wrap ul.w_tags li a:hover, header .inner_menu_wrap ul.w_tags li a:focus, header .inner_menu_wrap ul.menu_posts_list li a:hover, header .inner_menu_wrap ul.menu_posts_list li a:focus {
   color: #0075ba;
